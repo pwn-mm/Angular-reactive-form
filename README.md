@@ -12,6 +12,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Notes
 
-- Angular error: "Can't bind to 'ngModel' since it isn't a known property of 'input'" => you need to import the FormsModule package.
+- Angular error: `Can't bind to 'ngModel' since it isn't a known property of 'input'`=> you need to import the <b>FormsModule</b> package.
+  <br/>
 
-- 
+- You also need to import <b>MatNativeDateModule</b> if you are going to use `DatePicker`.
