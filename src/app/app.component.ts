@@ -11,7 +11,6 @@ export class AppComponent {
   title = 'Angular13Crud';
 
   constructor(private dialog: MatDialog) { }
-
   openDialog() {
     this.dialog.open(DialogComponent, {
       width: '30%'
