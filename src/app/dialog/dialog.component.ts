@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 
 interface Category {
   value: string;
@@ -22,11 +23,29 @@ export class DialogComponent implements OnInit {
   ];
 
 
-  freshnessList = ["Brand New", "Second Hand", "Refurbished"]
+  originalityList = ["Brand New", "Second Hand", "Refurbished"]
 
-  constructor() { }
+  productForm !: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder,
+  ) { }
 
   ngOnInit(): void {
+    this.productForm = this.formBuilder.group({
+      productName: ['', Validators.required],
+      category: ['', Validators.required],
+      originality: ['', Validators.required],
+      price: ['', Validators.required],
+      comment: ['', Validators.required],
+      date: ['', Validators.required],
+    })
+  }
+
+  addProduct(): void {
+    // Process checkout data here
+    console.log('Your order has been submitted', this.productForm.value);
+    this.productForm.reset();
   }
 
 }

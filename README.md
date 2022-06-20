@@ -16,3 +16,5 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
   <br/>
 
 - You also need to import <b>MatNativeDateModule</b> if you are going to use `DatePicker`.
+
+- You also need to import <b>ReactiveFormsModule</b> if you are going to use `[formGroup]`.

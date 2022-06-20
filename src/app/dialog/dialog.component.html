@@ -1,46 +1,51 @@
 <h1 mat-dialog-title>Add New Product</h1>
 <mat-dialog-content>
-    <!-- Product Name -->
-    <mat-form-field appearance="outline">
-        <mat-label>Product Name</mat-label>
-        <input matInput placeholder="Name" />
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
-    <!-- Product Category -->
-    <mat-form-field appearance="outline">
-        <mat-label>Product Categories</mat-label>
-        <mat-select [(ngModel)]="selectedValue" name="phone">
-            <mat-option *ngFor="let ph of phones" [value]="ph.value">
-                {{ ph.viewValue }}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-    <p>Selected Category: {{ selectedValue }}</p>
-    <!-- DatePicker -->
-    <mat-form-field appearance="outline">
-        <mat-label>Choose a date</mat-label>
-        <input matInput [matDatepicker]="picker" />
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <!-- Product Freshness -->
-    <mat-label>Product Freshness</mat-label>
-    <mat-radio-group class="example-radio-group" aria-label="Select an option">
-        <mat-radio-button class="example-radio-button" *ngFor="let fresh of freshnessList" [value]="fresh"> {{fresh}}
-        </mat-radio-button>
-    </mat-radio-group>
-    <!-- Product Price -->
-    <mat-form-field appearance="outline">
-        <mat-label>Price</mat-label>
-        <input matInput type="number" placeholder="Price" />
-    </mat-form-field>
-    <!-- Comment -->
-    <mat-form-field appearance="outline">
-        <mat-label>Comment</mat-label>
-        <textarea matInput></textarea>
-    </mat-form-field>
+    <form [formGroup]="productForm" #updstu="ngForm">
+        <!-- Product Name -->
+        <mat-form-field appearance="outline">
+            <mat-label>Product Name</mat-label>
+            <input formControlName="productName" matInput placeholder="Name" />
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <!-- Product Category -->
+        <mat-form-field appearance="outline">
+            <mat-label>Product Categories</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="phone" formControlName="category">
+                <mat-option *ngFor="let ph of phones" [value]="ph.value">
+                    {{ ph.viewValue }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <p>Selected Category: {{ selectedValue }}</p>
+        <!-- DatePicker -->
+        <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input formControlName="date" matInput [matDatepicker]="picker" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <!-- Product Originality -->
+        <mat-label>Product Originality</mat-label>
+        <mat-radio-group formControlName="originality" class="example-radio-group" aria-label="Select an option">
+            <mat-radio-button class="example-radio-button" *ngFor="let origin of originalityList" [value]="origin">
+                {{ origin }}
+            </mat-radio-button>
+        </mat-radio-group>
+        <!-- Product Price -->
+        <mat-form-field appearance="outline">
+            <mat-label>Price</mat-label>
+            <input formControlName="price" matInput type="number" placeholder="Price" />
+        </mat-form-field>
+        <!-- Comment -->
+        <mat-form-field appearance="outline">
+            <mat-label>Comment</mat-label>
+            <textarea formControlName="comment" matInput></textarea>
+        </mat-form-field>
+    </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
     <button color="warn" mat-button mat-dialog-close>Cancel</button>
-    <button color="primary" mat-button [mat-dialog-close]="true" cdkFocusInitial>Add</button>
-  </mat-dialog-actions>
+    <button color="primary" mat-button [mat-dialog-close]="true" cdkFocusInitial type="submit" (click)="addProduct()">
+        Add
+    </button>
+</mat-dialog-actions>
