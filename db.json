@@ -1,0 +1,21 @@
+{
+  "productList": [
+    {
+      "id": 1,
+      "name": "Iphone 13 pro",
+      "category": "Iphone",
+      "originality": "Brand New",
+      "price": "$999"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
