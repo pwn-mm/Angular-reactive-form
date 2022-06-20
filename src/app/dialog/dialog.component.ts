@@ -15,11 +15,14 @@ export class DialogComponent implements OnInit {
   selectedValue: string;
 
   // dummies
-  foods: Category[] = [
-    { value: 'steak-0', viewValue: 'Steak' },
-    { value: 'pizza-1', viewValue: 'Pizza' },
-    { value: 'tacos-2', viewValue: 'Tacos' },
+  phones: Category[] = [
+    { value: 'a-0', viewValue: 'Apple' },
+    { value: 'op-1', viewValue: 'One Plus' },
+    { value: 'ss-2', viewValue: 'Samsaung' },
   ];
+
+
+  freshnessList = ["Brand New", "Second Hand", "Refurbished"]
 
   constructor() { }
 
