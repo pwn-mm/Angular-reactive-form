@@ -26,6 +26,15 @@
       "comment": "out of stock",
       "date": "2022-06-20T17:30:00.000Z",
       "id": 3
+    },
+    {
+      "productName": "Iphone SE (New SE)",
+      "category": "a-0",
+      "originality": "Brand New",
+      "price": 700000,
+      "comment": "New SE model.",
+      "date": "2022-06-20T17:30:00.000Z",
+      "id": 4
     }
   ],
   "comments": [

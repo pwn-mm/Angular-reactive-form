@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialogRef } from '@angular/material/dialog';
 
 interface Category {
   value: string;
@@ -30,7 +31,12 @@ export class DialogComponent implements OnInit {
   snackDuration = 5;
 
   // Inject formbuilder, http service
-  constructor(private formBuilder: FormBuilder, private api: ApiService, private _snackBar: MatSnackBar) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private api: ApiService,
+    private _snackBar: MatSnackBar,
+    private dialogRef: MatDialogRef<DialogComponent>
+  ) { }
 
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
@@ -68,19 +74,24 @@ export class DialogComponent implements OnInit {
       this.api.postProduct(this.productForm.value).subscribe({
         next: (res) => {
           // alert('Product added successfully.')
-          this._snackBar.openFromComponent(SnackTruePartyComponent, { duration: this.snackDuration * 1000 })
+          this._snackBar.openFromComponent(SnackTruePartyComponent, {
+            duration: this.snackDuration * 1000,
+          });
+          this.productForm.reset();
+          this.dialogRef.close();
         },
         error: () => {
           // alert("Error while adding the product...")
-          this._snackBar.openFromComponent(SnackFalsePartyComponent, { duration: this.snackDuration * 1000 })
-        }
-      })
-      this.productForm.reset();
+          this._snackBar.openFromComponent(SnackFalsePartyComponent, {
+            duration: this.snackDuration * 1000,
+          });
+        },
+      });
+    } else {
+      this._snackBar.openFromComponent(SnackFalsePartyComponent, {
+        duration: this.snackDuration * 1000,
+      });
     }
-    else {
-      this._snackBar.openFromComponent(SnackFalsePartyComponent, { duration: this.snackDuration * 1000 })
-    }
-
   }
 }
 
@@ -90,29 +101,29 @@ export class DialogComponent implements OnInit {
   templateUrl: './snack-bar-component-true-snack.html',
   styles: [
     `
-    .example-pizza-party {
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content:center;
-    }
-  `,
+      .example-pizza-party {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    `,
   ],
 })
-
 export class SnackTruePartyComponent { }
+
 @Component({
   selector: 'snack-bar-component-false-snack',
   templateUrl: './snack-bar-component-false-snack.html',
   styles: [
     `
-    .example-pizza-party {
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content:center;
-    }
-  `,
+      .example-pizza-party {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    `,
   ],
 })
 export class SnackFalsePartyComponent { }
