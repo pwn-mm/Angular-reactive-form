@@ -1,11 +1,31 @@
 {
   "productList": [
     {
-      "id": 1,
-      "name": "Iphone 13 pro",
-      "category": "Iphone",
+      "productName": "Iphone X",
+      "category": "a-0",
+      "originality": "Second Hand",
+      "price": 500000,
+      "comment": "In Stock",
+      "date": "2022-06-20T17:30:00.000Z",
+      "id": 1
+    },
+    {
+      "productName": "Samsung Note10 ",
+      "category": "ss-2",
       "originality": "Brand New",
-      "price": "$999"
+      "price": 900000,
+      "comment": "In Stock",
+      "date": "2022-06-20T17:30:00.000Z",
+      "id": 2
+    },
+    {
+      "productName": "Galaxy g1",
+      "category": "ss-2",
+      "originality": "Second Hand",
+      "price": 30000,
+      "comment": "out of stock",
+      "date": "2022-06-20T17:30:00.000Z",
+      "id": 3
     }
   ],
   "comments": [

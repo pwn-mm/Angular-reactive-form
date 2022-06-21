@@ -18,3 +18,5 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 - You also need to import <b>MatNativeDateModule</b> if you are going to use `DatePicker`.
 
 - You also need to import <b>ReactiveFormsModule</b> if you are going to use `[formGroup]`.
+
+- You subscribe by calling the `subscribe()` method of the instance, passing an observer object to receive the notifications.
