@@ -1,40 +1,49 @@
 {
   "productList": [
     {
-      "productName": "Iphone X",
-      "category": "a-0",
-      "originality": "Second Hand",
-      "price": 500000,
-      "comment": "In Stock",
-      "date": "2022-06-20T17:30:00.000Z",
+      "productName": "One Plus 2T",
+      "category": "One Plus",
+      "originality": "Brand New",
+      "price": 880000,
+      "comment": "3 only left.",
+      "date": "2022-06-22T17:30:00.000Z",
       "id": 1
     },
     {
-      "productName": "Samsung Note10 ",
-      "category": "ss-2",
+      "productName": "MacBook M2 Air",
+      "category": "Apple",
       "originality": "Brand New",
-      "price": 900000,
-      "comment": "In Stock",
-      "date": "2022-06-20T17:30:00.000Z",
+      "price": 2800000,
+      "comment": "New arrival. Fan favourite.",
+      "date": "2022-06-22T17:30:00.000Z",
       "id": 2
     },
     {
-      "productName": "Galaxy g1",
-      "category": "ss-2",
-      "originality": "Second Hand",
-      "price": 30000,
-      "comment": "out of stock",
-      "date": "2022-06-20T17:30:00.000Z",
+      "productName": "Z Flip",
+      "category": "Samsaung",
+      "originality": "Brand New",
+      "price": 2200000,
+      "comment": "Best seller. Update Price",
+      "date": "2022-06-22T17:30:00.000Z",
       "id": 3
     },
     {
-      "productName": "Iphone SE (New SE)",
-      "category": "a-0",
+      "productName": "One Plus Ce2",
+      "category": "One Plus",
       "originality": "Brand New",
-      "price": 700000,
-      "comment": "New SE model.",
-      "date": "2022-06-20T17:30:00.000Z",
-      "id": 4
+      "price": 600000,
+      "comment": "Best seller. 5  left",
+      "date": "2022-06-19T17:30:00.000Z",
+      "id": 5
+    },
+    {
+      "productName": "Iphone X",
+      "category": "Apple",
+      "originality": "Second Hand",
+      "price": 500000,
+      "comment": "out of stock.",
+      "date": "2022-06-22T17:30:00.000Z",
+      "id": 6
     }
   ],
   "comments": [

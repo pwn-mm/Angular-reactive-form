@@ -10,13 +10,17 @@
         <!-- Product Category -->
         <mat-form-field appearance="outline">
             <mat-label>Product Categories</mat-label>
-            <mat-select [(ngModel)]="selectedValue" name="phone" formControlName="category">
-                <mat-option *ngFor="let ph of phones" [value]="ph.value">
-                    {{ ph.viewValue }}
+            <!-- <mat-select [(ngModel)]="selectedValue" name="category" formControlName="category"> -->
+            <mat-select  name="category" formControlName="category">
+                <mat-option *ngFor="let ph of phones" [value]="ph">
+                    {{ ph }}
                 </mat-option>
+                <!-- <mat-option value="Apple">Apple</mat-option>
+                <mat-option value="OnePlus">OnePlus</mat-option>
+                <mat-option value="Samsaung">Samsaung</mat-option> -->
             </mat-select>
         </mat-form-field>
-        <p>Selected Category: {{ selectedValue }}</p>
+        <!-- <p>Selected Category: {{ selectedValue }}</p> -->
         <!-- DatePicker -->
         <mat-form-field appearance="outline">
             <mat-label>Choose a date</mat-label>
@@ -45,8 +49,7 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
     <button color="warn" mat-button mat-dialog-close>Cancel</button>
-    <button color="primary" mat-button [mat-dialog-close]="true" cdkFocusInitial type="submit"
-        (click)="openSnackBar()">
-        Add
+    <button color="primary" mat-button [mat-dialog-close]="true" cdkFocusInitial type="submit" (click)="openSnackBar()">
+        {{ actionBtn }}
     </button>
 </mat-dialog-actions>
