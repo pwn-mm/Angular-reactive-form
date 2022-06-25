@@ -41,9 +41,18 @@
       "category": "Apple",
       "originality": "Second Hand",
       "price": 500000,
-      "comment": "out of stock.",
+      "comment": "3 left.",
       "date": "2022-06-22T17:30:00.000Z",
       "id": 6
+    },
+    {
+      "productName": "Watch series 6",
+      "category": "Apple",
+      "originality": "Brand New",
+      "price": 650000,
+      "comment": "Fan favourite",
+      "date": "2022-06-22T17:30:00.000Z",
+      "id": 7
     }
   ],
   "comments": [
