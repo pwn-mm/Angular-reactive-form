@@ -1,9 +1,8 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 import { ApiService } from './services/api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-//* For Table
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -57,7 +56,6 @@ export class AppComponent implements OnInit {
   getAllProducts() {
     this.api.getProduct().subscribe({
       next: (res) => {
-        // console.log(res);
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;

@@ -4,11 +4,6 @@ import { ApiService } from '../services/api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-// interface Category {
-//   value: string;
-//   viewValue: string;
-// }
-
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
@@ -16,13 +11,6 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class DialogComponent implements OnInit {
   selectedValue: string;
-
-  // dummies
-  // phones: Category[] = [
-  //   { value: 'a-0', viewValue: 'Apple' },
-  //   { value: 'op-1', viewValue: 'One Plus' },
-  //   { value: 'ss-2', viewValue: 'Samsaung' },
-  // ];
 
   phones = ['Apple', 'One Plus', 'Samsaung'];
 
@@ -41,7 +29,7 @@ export class DialogComponent implements OnInit {
     private _snackBar: MatSnackBar,
     private dialogRef: MatDialogRef<DialogComponent>,
     @Inject(MAT_DIALOG_DATA) public editData: any
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
@@ -52,7 +40,7 @@ export class DialogComponent implements OnInit {
       comment: ['', Validators.required],
       date: ['', Validators.required],
     });
-    // console.log(this.editData);
+
     //* If editData ? pass the values to the productForm using controls
     if (this.editData) {
       this.actionBtn = 'Update';
@@ -69,23 +57,6 @@ export class DialogComponent implements OnInit {
     }
   }
 
-  /* addProduct(): void {
-    // Process checkout data here
-    if (this.productForm.value && this.productForm.valid) {
-      console.log('Your order has been submitted', this.productForm.value);
-
-      this.api.postProduct(this.productForm.value).subscribe({
-        next: (res) => {
-          alert('Product added successfully.')
-        },
-        error: () => {
-          alert("Error while adding the product...")
-        }
-      })
-      this.productForm.reset();
-    }
-  } */
-
   //* Add Product Function and show snack msg after adding the product
   openSnackBar(): void {
     // Process checkout data here
@@ -95,7 +66,7 @@ export class DialogComponent implements OnInit {
 
         this.api.postProduct(this.productForm.value).subscribe({
           next: (res) => {
-            alert('Product added successfully.')
+            alert('Product added successfully.');
             this._snackBar.openFromComponent(SnackAddProduct, {
               duration: this.snackDuration * 1000,
             });
@@ -123,7 +94,7 @@ export class DialogComponent implements OnInit {
   updateProduct() {
     this.api.putProduct(this.productForm.value, this.editData.id).subscribe({
       next: (res) => {
-        alert('Product Updated.')
+        alert('Product Updated.');
         this._snackBar.openFromComponent(SnackUpdateProduct, {
           duration: this.snackDuration * 1000,
         });
@@ -156,7 +127,7 @@ export class DialogComponent implements OnInit {
     `,
   ],
 })
-export class SnackAddProduct { }
+export class SnackAddProduct {}
 
 @Component({
   selector: 'update-snack',
@@ -174,7 +145,7 @@ export class SnackAddProduct { }
     `,
   ],
 })
-export class SnackUpdateProduct { }
+export class SnackUpdateProduct {}
 
 @Component({
   selector: 'error-snack',
@@ -192,4 +163,4 @@ export class SnackUpdateProduct { }
     `,
   ],
 })
-export class SnackErrorProduct { }
+export class SnackErrorProduct {}
